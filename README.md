@@ -3,7 +3,13 @@ Class Review
 
 강의를 듣고 강의에 대한 간단한 리뷰를 공유합니다.
 
-# commit message rule
+## Study Rule
+- 일주일에 최소 3강의를 들어야 합니다. (주말 포함)
+- 강의에 대한 리뷰 형식은 자유 입니다.
+- 강좌 집계는 일요일 18:00입니다.
+- 벌금 5,000원
+
+## commit message rule
 - 첫 회차
 ```
 detail: [강의 목적] 강의명, 강사명
