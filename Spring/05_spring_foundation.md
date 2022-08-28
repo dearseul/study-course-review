@@ -1,7 +1,8 @@
 # 스프링 웹 개발 기초
-1.정적 컨텐츠
-2.MVC
-3.API
+
+1. 정적 컨텐츠
+2. MVC
+3. API
 
 ### 정적 컨텐츠
 - localhost:8080/hello-static 
