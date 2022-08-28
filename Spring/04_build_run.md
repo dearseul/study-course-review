@@ -1,6 +1,6 @@
-##4차시 빌드하고 실행하기
+## 4차시 빌드하고 실행하기
 
-##Build
+## Build
     ./해당프로젝트폴더 gradlew build
     cd build/libs
     java -jar hello-spring-0.0.1-SNAPSHOT.jar
