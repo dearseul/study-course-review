@@ -59,29 +59,30 @@ Class Tv{
 ```
 >   클래스명 변수명;            // 클래스의 객체를 참조하기 위한 참조변수 선언
 >   변수명 = new 클래스명();    // 클래스의 객체를 생성 후, 객체의 주소를 참조변수에 저장
+```java
+   Tv t;
+   t = new Tv();
 
->   Tv t;
->   t = new Tv();
-
->   Tv t = new Tv(); 
-
+   Tv t = new Tv(); 
+```
 * 객체의 사용
-
->   t.channel = 7;      //   Tv 인스턴스의 멤버변수 channl을 7로 한다.
->   t.channelDown();    //   Tv 인스턴스의 메서드 channelDown()을 호출한다.
->   System.out.println("현재의 채널은"+ t.channel + "입니다.");
-
+```java
+   t.channel = 7;      //   Tv 인스턴스의 멤버변수 channl을 7로 한다.
+   t.channelDown();    //   Tv 인스턴스의 메서드 channelDown()을 호출한다.
+   System.out.println("현재의 채널은"+ t.channel + "입니다.");
+```
 객체 배열
 -----
 
 * 객체 배열 == 참조변수 배열 
-    >   Tv[] tvArr = new Tv[3];
-    >   tvArr[0] = new Tv();
-    >   tvArr[1] = new Tv();
-    >   tvArr[2] = new Tv();
+```
+    Tv[] tvArr = new Tv[3];
+    tvArr[0] = new Tv();
+    tvArr[1] = new Tv();
+    tvArr[2] = new Tv();
 
-    >   Tv[] tvArr = {new Tv(), new Tv(), new Tv()};
-
+    Tv[] tvArr = {new Tv(), new Tv(), new Tv()};
+```
 클래스의 정의 
 -----
 
@@ -145,11 +146,11 @@ c.number = 5;
 // cv 사용
 Card.width = 200;
 Card.height = 300;
-
-// 권장 안함 (cv)
+```
+- 권장 안함 (cv)
 ~~c.width = 200;~~
 ~~c.height = 300;~~
-```
+
 
 메서드
 -----
@@ -201,12 +202,14 @@ void printGugudan(int dan){
         int result = x * y;
         return result;              // 타입이 일치하거나 자동형변환 가능해야 함 
     }
-
+```
+- 조건식이 참일 때만 실행되는 return문: error
     ~~int max(int a, int b){~~
         ~~if(a > b)~~
-            ~~return a;~~         // 조건식이 참일 때만 실행된다. => 에러 
+            ~~return a;~~          
     ~~}~~
 
+```java
     int max(int a, int b){
         if(a > b){
             return a;
