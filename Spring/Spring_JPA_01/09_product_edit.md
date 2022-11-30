@@ -20,7 +20,7 @@
     @PostMapping("items/{itemId}/edit")
     public String updateItem(@ModelAttribute("form") BookForm form, @PathVariable String itemId){
 
-    new Book에 form set
+    new Book에 form seg
     itemService.saveItem(book);
     }
 
