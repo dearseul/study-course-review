@@ -73,7 +73,28 @@
     - 애플리케이션 배포 주기에 맞추어 Etag 모두 갱신
 
 ## 캐시와 조건부 요청 헤더
+### 캐시 제어 헤더
+- Cache-Control : 캐시 지시어
+    - max-age : 캐시 유효 시간, 초 단위
+    - no-cache : 데이터는 캐시해도 되지만, 항상 원(origin) 서버에 검증하고 사용
+    - no-store : 데이터에 민감한 정보가 있으므로 저장하면 안 됨.
+- Expires : 캐시 만료일을 정확하게 지정  
 
 ## 프록시 캐시
+- 캐시 지시어
+  - public : 응답이 public 캐시에 저장되어도 됨.
+  - private : 응답이 해당 사용자만을 위한 것임, private 캐시에 저장해야 함 (기본값)
+  - s-maxage : 프록시 캐시에만 적용되는 max-age
+  - Age: 60 : 오리진 서버에서 응답 후 프록시 캐시 내 머문 시간
 
-## 캐시 무효화
+## 캐시 무효화 
+- Cache-Control : 확실한 캐시 무효화 응답
+  - Cache-Control: no-cache, no-store, must-revalidate
+  - Pragma: no-cache
+  - no-cache : 데이터는 캐시해도 되지만 항상 원 서버에 검증하고 사용
+  - no-store : 데이터에 민감한 정보가 있으므로 저장하면 안 됨
+  - must-revalidate
+    - 캐시 만료 후 최초 조회시 원 서버에 검증해야 함.
+    - 원 서버 접근 실패시 반드시 오류가 발생해야 함 504
+    - must-revalidate는 캐시 유효 시간이라면 캐시를 사용함
+  - Pragma: no-cache : HTTP 1.0 하위 호환
