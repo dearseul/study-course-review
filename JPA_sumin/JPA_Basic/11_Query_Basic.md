@@ -67,13 +67,42 @@ SELECT m.age, m.username FROM Member m
     - 순서와 타입이 일치하는 생성자 필요 
 
 ## 페이징
+### 페이징 API
+- JPA는 페이징을 다음 두 API로 추상화
+  - setFirstResult(int start) : 조회 시작위치
+  - setMaxResults(int maxResult) : 조회할 데이터 수
 
 ## 조인
+### 조인 종류
+- 내부 조인
+- 외부 조인
+- 세타 조인
+### 조인 - ON절
+- 조인 대상 필터링
+- 연관 관계가 없는 엔티티 외부 조인 
 
 ## 서브쿼리
+### 지원 함수
+- EXISTS, ALL, ANY, SOME / IN
+### 서브쿼리 한계
+- JPA는 WHERE, HAVING절에서만 서브 쿼리 사용 가능
+- SELECT절도 가능(하이버네이트에서 지원)
+- FROM 절의 서브쿼리는 현재 JPQL에서 불가능
+  - 조인으로 풀 수 있으면 풀어서 해결
 
 ## JPQL 타입 표현과 기타식
+### JPQL 타입 표현
+- ENUM : 패키지명 포함해서 
+- 엔티티 타입 : TYPE(m) = Member (상속 관계에서 사용)
 
 ## 조건식 (CASE 등)
+### CASE 식
+- COALESCE : 하나씩 조회해서 null이 아니면 반환
+- NULLIF : 두 값이 같으면 null 반환 다르면 첫번째 값 반환
 
 ## JPQL 함수 (47)
+### 기본 함수
+- CONCAT, SUBSTRING, TRIM, LENGTH, LOCATE, ...
+### 사용자 정의 함수
+- 하이버네이트는 사용 전 방언에 추가해야 함.
+  - 사용하는 DB 방언을 상속받고, 사용자 정의 함수 등록
