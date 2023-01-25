@@ -16,5 +16,29 @@
     - 부득이하게 영속성 컨텍스트에 엔티티가 있으면 벌크 연산 직후 영속성 컨텍스트를 초기화 함 
 
 ## @EntityGraph
+```java
+  @Override
+  @EntityGraph(attributePaths = {"team"})
+  List<Member> findAll();
+  
+  @EntityGraph(attributePaths = {"team"})
+  @Query("select m from Member m")
+  List<Member> findMemberEntityGraph();
+  
+  @EntityGraph(attributePaths = {"team"})
+  List<Member> findEntityGraphByUsername(@Param("username") String username);
+```
+- 페치조인 기능 구현해줌
 
 ## Jpa Hint & Lock
+### JPA Hint
+- JPA 쿼리 힌트 (SQL 힌트가 아니라 JPA 구현체에게 제공하는 힌트)
+```java
+  @QueryHints(value = @QueryHint(name = "org.hibernate.readOnly", value = "true"))
+  Member findReadOnlyByUsername(String username);
+```
+### Lock
+```java
+  @Lock(LockModeType.PESSIMISTIC_WRITE)
+  List<Member> findLockByUsername(String username);
+```
